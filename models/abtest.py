@@ -4,8 +4,7 @@ Created on Fri Sep 20 23:00:47 2019
 
 @author: damara064128
 """
-import warnings;warnings.filterwarnings("ignore")
-import pandas as pd
+
 import statsmodels.api as sm
 
 class ABTesting():

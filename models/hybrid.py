@@ -142,5 +142,5 @@ class Hybrid():
             
         return new_rankings
 
-    def predict(self, person='jul', min_content_score=0.1):
+    def predict(self, person='ANI', min_content_score=0.1):
         return self.user_recommendations(person,min_content_score)

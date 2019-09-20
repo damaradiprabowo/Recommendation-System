@@ -137,14 +137,10 @@ class Collaborative(object):
 
         #(options, args) = optParser.parse_args()
         #nama = options.nama
-        recommendation = self.user_recommendations('jul')
+        recommendation = self.user_recommendations('Damar Teman Firli')
         #print('Recommendation for jul: ',recommendation)
         return recommendation
         #print('Person correlation: ',person_correlation('jul','Hania'))
         #print('Similarity score: ',similarity_score('jul','Hania'))
         #print('most similar person to jul: ',most_similar_users('jul',24))
-    
 
-
-with open('film.json', 'r') as f:
-    dataset = json.load(f)

@@ -10,7 +10,7 @@ from apyori import apriori
 class Apriori(): 
     
     #Constructor to initialize the instance members of the class
-    def __init__ (self,  support=0.1,  confidence=0.1, lift=1, length=1): 
+    def __init__ (self,  support=0.05,  confidence=0.05, lift=1, length=1): 
         self.min_support = support 
         self.min_confidence = confidence
         self.min_lift = lift
