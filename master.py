@@ -14,11 +14,11 @@ os.chdir('models')
 dir = os.getcwd()
 sys.path.insert(0, dir)
 
-##from apriori import Apriori
-##from collaborative import Collaborative
-##from content import ContentBased
-#from hybrid import Hybrid
-##from abtest import ABTesting
+from apriori import Apriori
+from collaborative import Collaborative
+from content import ContentBased
+from hybrid import Hybrid
+from abtest import ABTesting
 
 
 os.chdir('../dataset')
@@ -30,6 +30,7 @@ with open('collaborative_dataset.json', 'r') as f:
     df_collab = json.load(f)
 df_content = pd.read_csv('content_dataset.csv')
 df_hybrid = pd.read_csv('hybrid_dataset.csv',sep=';')
+df_abtest = pd.read_csv('ab_dataset.csv')
 
 print('Association rule with apriori: ')
 apr = Apriori(support=0.1,  confidence=0.1)
@@ -50,3 +51,8 @@ print(content.predict('Avenger'))
 print('Recommendation for ANI with hybrid algorithm:')
 hybrid = Hybrid(film=df_hybrid, dataset=df_collab)
 print(hybrid.predict())
+
+print('AB testing:')
+ab = ABTesting(0.05)
+ab.fit(df_abtest)
+ab.predict()
